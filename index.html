@@ -1,0 +1,21 @@
+<!DOCTYPE html>	   <!--Тип документа-->	
+<html>	
+  <head>
+    <title>Angular приложение</title>	<!--Заголовок окна-->
+    <link href = "style.css" rel="stylesheet">    <!--Подключение таблицы стилей-->
+  </head>
+  <body ng-app="myApp" ng-controller="MyController">     <!--Создание приложения и контроллера-->
+		<render-cart class = "cart"></render-cart>		<!-- Ссылка на дерективу render-cart-->
+    <h1>Мини интернет магазин</h1>		<!--заголовок-->  
+    <ul>	<!--Маркированный список-->	
+      <li ng-repeat="item in items">	<!-- выводит список item объектов items-->
+        {{item.name}}			<!-- выводит свойство name каждого объекта item-->
+        <button ng-click="addToCart(item)">+</button> 		<!--Кнопка "добавить товар"-->
+      </li>		
+    </ul>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>  <!--подключение Angular-->
+		<!--структура-->
+		<script type="text/javascript" src = "js/app/myApp.js"></script>	<!--ссылка на myApp.js-->	
+		<script type="text/javascript" src = "js/app/cart.js"></script>		<!--ссылка на cart.js-->
+  </body>
+</html>
